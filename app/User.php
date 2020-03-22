@@ -44,7 +44,9 @@ class User extends Authenticatable
 
     public function assignRole($role)
     {
-        $this->roles()->save($role);
+        //save fails if role exists
+        // add new roles without dropping others
+        $this->roles()->sync($role, false);
     }
 
     public function abilities()
