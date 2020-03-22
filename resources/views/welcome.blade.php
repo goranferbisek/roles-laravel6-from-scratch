@@ -14,6 +14,11 @@
                     <a href="#">Edit forum</a>
                 </li>
             @endcan
+            @can ('view_reports')
+                <li>
+                    <a href="#">View Reports</a>
+                </li>
+            @endcan
         </div>
     </body>
 </html>
