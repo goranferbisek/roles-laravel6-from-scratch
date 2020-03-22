@@ -44,6 +44,10 @@ class User extends Authenticatable
 
     public function assignRole($role)
     {
+        if (is_string($role)) {
+            $role = Role::whereName($role)->firstOrFail();
+        }
+
         //save fails if role exists
         // add new roles without dropping others
         $this->roles()->sync($role, false);
