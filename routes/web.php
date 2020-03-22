@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+// log in my manually created user in the database
+auth()->loginUsingId(1);
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

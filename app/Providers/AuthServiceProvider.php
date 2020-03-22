@@ -25,6 +25,11 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        // we dont have access to authenticated user so we make a global gate
+        Gate::before(function($user, $ability) {
+            if ($user->abilities()->contains($ability)) {
+                return true;
+            }
+        });
     }
 }
