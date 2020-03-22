@@ -16,6 +16,6 @@ class Role extends Model
 
     public function allowTo($abitity)
     {
-        $this->abilities()->save($abitity);
+        $this->abilities()->sync($abitity, false);
     }
 }
