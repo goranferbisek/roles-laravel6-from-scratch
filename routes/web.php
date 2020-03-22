@@ -19,3 +19,7 @@ auth()->loginUsingId(1);
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/reports', function () {
+    return 'Secret reports';
+})->middleware('can:view_reports');

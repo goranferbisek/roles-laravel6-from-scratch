@@ -16,7 +16,7 @@
             @endcan
             @can ('view_reports')
                 <li>
-                    <a href="#">View Reports</a>
+                    <a href="/reports">View Reports</a>
                 </li>
             @endcan
         </div>
